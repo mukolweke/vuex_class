@@ -10,24 +10,28 @@ const store = new Vuex.Store({
         title2: "vueClass",
         remark1: "Below Average",
         remark2: "Good",
-        remark3: "Excellent"
+        remark3: "Excellent",
+        cash_in_bank :10000,
+        money_balance:0
     },
 
     mutations:{ //always synchronous
 
         addMarks(state, items){
             state.marks = (Number(items.mathematics) + Number(items.biology)+ Number(items.chemistry) + Number(items.physics)+Number(items.socials)+Number(items.kiswahili)+Number(items.english)) ;
+        },
+
+        increment_bank(state, payload){
+            this.cash_in_bank += payload
+        },
+
+        decrement_cash(state, payload){
+
+            this.money_balance = (this.cash_in_bank - Number(payload))
+
         }
-
     },
-    actions:{
 
-        //access mutations if you have an asynchronous thing
-        increment(state, payload){
-            state.commit('increment', payload);
-
-        }
-    },
     getters:{
 
         getMarks(state){
@@ -52,6 +56,17 @@ const store = new Vuex.Store({
             }
 
         },
+
+        getCash(state){
+
+            return this.cash_in_bank
+
+        },
+
+        getMoneyBalance(state){
+
+            return this.money_balance
+        }
 
     }
 })
