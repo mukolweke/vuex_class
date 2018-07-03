@@ -1,32 +1,32 @@
 <template>
     <div id="VuexTest">
         <h1>{{title2}}</h1>
-        <p>Students Marks: &nbsp; {{getMarks}}</p>
+        <p>Students Marks: &nbsp; {{getMarks}}&nbsp;{{getRemark}}</p>
 
         <button @click="activate">Enter Marks</button>
 
         <form>
 
             Mathematics:<br>
-            <input :disabled="submitted" v-model="items.mathematics"/><br>
+            <input v-model="items.mathematics" required><br>
 
             Biology<br>
-            <input v-model="items.biology"/><br>
+            <input v-model="items.biology" required><br>
 
             English:<br>
-            <input v-model="items.english"/><br>
+            <input v-model="items.english" required><br>
 
             Kiswahili:<br>
-            <input v-model="items.kiswahili"/><br>
+            <input v-model="items.kiswahili" required><br>
 
             Socials:<br>
-            <input v-model="items.socials"/><br>
+            <input v-model="items.socials" required><br>
 
             Chemistry:<br>
-            <input v-model="items.chemistry"/><br>
+            <input v-model="items.chemistry" required><br>
 
             Physics:<br>
-            <input v-model="items.physics"/><br>
+            <input v-model="items.physics"required><br>
 
         </form>
 
@@ -63,8 +63,16 @@
             },
 
             count(){
+
                 return this.$store.getters.counter;
-            }
+
+            },
+
+            getRemark(){
+
+                return this.$store.getters.getRemark
+
+            },
         },
 
         methods:{
@@ -74,9 +82,11 @@
                 this.items = {}
                 this.activate = true
                 this.submitted = true
+                this.getRemark()
                 // this.$store.dispatch('addMarks', 2)
-
             },
+
+
 
             activate(){
                 this.submitted = false

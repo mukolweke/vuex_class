@@ -1,12 +1,13 @@
 <template>
     <div>
         <h1>{{title}}</h1>
-        Blog id: {{blog.title}}
+        <hr>
+        <h1>{{blog.title}}</h1>
         <br/>
         <div class="blogPanel">
             {{blog.body}}
         </div>
-
+<hr>
     </div>
 </template>
 
@@ -43,5 +44,9 @@
 </script>
 
 <style scoped>
-
+.blogPanel{
+    width: 500px;
+    margin: 0 auto;
+    text-align: justify;
+}
 </style>
