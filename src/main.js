@@ -6,6 +6,7 @@ import router from './router'
 import Vuex from 'vuex'
 import Axios from 'axios'
 import store from './store/store'
+import vuexaxi from 'vue-axios'
 
 Vue.use(Vuex);
 Vue.config.productionTip = false;
@@ -16,6 +17,7 @@ new Vue({
     el: '#app',
     router,
     Axios,
+    vuexaxi,
     store,
     components: {App},
     template: '<App/>'
