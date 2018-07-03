@@ -53,6 +53,7 @@
         width: 600px;
         margin: 20px auto;
         background: pink;
+        text-align: justify;
     }
 
     .panel-heading {

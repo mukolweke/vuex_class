@@ -7,7 +7,10 @@ const store = new Vuex.Store({
         marks: 0,
         count : 0,
         title: "myBlog.me",
-        title2: "vueClass"
+        title2: "vueClass",
+        remark1: "Below Average",
+        remark2: "Good",
+        remark3: "Excellent"
     },
 
     mutations:{ //always synchronous
@@ -26,11 +29,6 @@ const store = new Vuex.Store({
         }
     },
     getters:{
-        // we can have lots of getters
-
-        // message(state){
-        //     return state.message.toUpperCase();
-        // },
 
         getMarks(state){
 
@@ -38,11 +36,23 @@ const store = new Vuex.Store({
 
         },
 
-        counter(state){
+        getRemarks(state){
 
-            return state.count;
+            if(this.marks<50){
 
-        }
+                return state.remark1
+
+            }else if(this.marks<70){
+
+                return state.remark2
+
+            }else{
+
+                return state.remark3
+            }
+
+        },
+
     }
 })
 

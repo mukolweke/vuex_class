@@ -32,10 +32,7 @@
     <div class="hello">
         <h1>{{ title }}</h1>
 
-        <section style="width: 1000px;margin: 0 auto;">
-            <sidebar>
-                <slot></slot>
-            </sidebar>
+        <section style="margin-left: 10px;border-left: 1px solid black;">
             <all_blogs>
                 <slot></slot>
             </all_blogs>

@@ -1,14 +1,15 @@
 <template>
+
     <div class="sidebar">
-        <ul>
-            <li>View Blogs</li>
-            <li>Create Blogs</li>
-        </ul>
+        <!--<router-link to="/">Home</router-link>-->
+        <router-link to="/">View Blogs</router-link>
+
     </div>
 </template>
 
 <script>
     export default {
+
         name: "sidebar"
     }
 </script>
